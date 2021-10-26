@@ -12,7 +12,7 @@
 ### Clone this repository
 
 ```bash
-$ git clone https://github.com/Ugboaja-Uchechi/leaderboard.git
+$ git clone https://github.com/Ugboaja-Uchechi/kanban.git
 $ cd Leaderboard
 ```
 
