@@ -48,13 +48,13 @@ For tracking linter errors locally you need to follow these steps:
 - Webpack
 
 
-## 👤 Author
-
-The author of the entire code is Ben Mukebo-
+## 👤 Author1
 
 - [GitHub](https://github.com/Ugboaja-Uchechi/)
 - [LinkedIn](https://www.linkedin.com/in/stephanie-ugboaja-930a2a216/)
 
+## 👤 Author2
+- [GitHub](https://github.com/gabrielcoder247)
 
 ## 🤝 Contributing
 
