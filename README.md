@@ -2,7 +2,7 @@
 
 # kanban
 
-* The leaderboard website displays scores.
+* This website displays meals gotten from an API [MealsDb](https://themealdb.com/api/json/v1/1/categories.php)
 
 # Screenshot
 
