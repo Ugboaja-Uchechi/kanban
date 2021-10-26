@@ -1,11 +1,12 @@
+// eslint-disable-next-line import/no-cycle
 import { getMeals } from './displayImage.js';
 import { displayComment } from './newComment.js';
 
 const commentSection = document.querySelector('.comment-popup');
 
-const displayPop = async(index) => {
-    const meals = await getMeals();
-    commentSection.innerHTML = `
+const displayPop = async (index) => {
+  const meals = await getMeals();
+  commentSection.innerHTML = `
   <div class="popup-top">
   <button class="close"> <i class="fas fa-times"></i> </button>
     <div class="meal-data">
@@ -25,12 +26,12 @@ const displayPop = async(index) => {
   <button type="submit" class="comm-sub">Submit</button>
   </form>`;
 
-    const popupWrapper = document.querySelector('.popup-wrapper');
-    const close = document.querySelector('.close');
-    close.addEventListener('click', () => {
-        popupWrapper.classList.remove('show');
-    });
-    displayComment();
+  const popupWrapper = document.querySelector('.popup-wrapper');
+  const close = document.querySelector('.close');
+  close.addEventListener('click', () => {
+    popupWrapper.classList.remove('show');
+  });
+  displayComment();
 };
 
 export default displayPop;

@@ -20,8 +20,8 @@
 
 import mealsMock from '../__mocks__/displayImage.js';
 
-test('Should count the total number of meals', async() => {
-    const meals = await mealsMock();
-    const count = meals.length;
-    expect(count).toBe(25);
+test('Should count the total number of meals', async () => {
+  const meals = await mealsMock();
+  const count = meals.length;
+  expect(count).toBe(25);
 });

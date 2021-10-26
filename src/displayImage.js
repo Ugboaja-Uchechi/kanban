@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import accessComment from './accessButton.js';
 import { allHearts, likesDisplay } from './likes_api.js';
 
@@ -5,25 +6,25 @@ const foodApi = 'https://themealdb.com/api/json/v1/1/categories.php';
 const mealList = document.querySelector('.meal-list');
 const itemList = document.querySelector('.item-list');
 
-const getMeals = async() => {
-    const response = await fetch(`${foodApi}`);
-    const data = await response.json();
-    const meal = data.categories;
-    return meal;
+const getMeals = async () => {
+  const response = await fetch(`${foodApi}`);
+  const data = await response.json();
+  const meal = data.categories;
+  return meal;
 };
 
-const loadData = async() => {
-    const likesStorage = JSON.parse(localStorage.getItem('likes') || '[]');
-    const displayData = await getMeals();
-    let display = '';
-    displayData.forEach((element) => {
-        let likeVariable = 0;
-        likesStorage.forEach((likes) => {
-            if (element.idCategory === likes.item_id) {
-                likeVariable = likes.likes;
-            }
-        });
-        display += `
+const loadData = async () => {
+  const likesStorage = JSON.parse(localStorage.getItem('likes') || '[]');
+  const displayData = await getMeals();
+  let display = '';
+  displayData.forEach((element) => {
+    let likeVariable = 0;
+    likesStorage.forEach((likes) => {
+      if (element.idCategory === likes.item_id) {
+        likeVariable = likes.likes;
+      }
+    });
+    display += `
       <li id="${element.idCategory}">
       <img src="${element.strCategoryThumb}" alt="Food">
       <div class="name">
@@ -33,25 +34,25 @@ const loadData = async() => {
       </div>
       <button type="submit" class="pop" id="${element.idCategory}">Comments</button>
       </li>`;
-    });
-    mealList.innerHTML = display;
-    allHearts();
-    accessComment();
-    await likesDisplay();
+  });
+  mealList.innerHTML = display;
+  allHearts();
+  accessComment();
+  await likesDisplay();
 };
 
 const totalItems = (arg) => {
-    let displayLength = '';
-    displayLength += `
+  let displayLength = '';
+  displayLength += `
   <h3>Cuisine ${arg.length}</h3>`;
-    itemList.innerHTML = displayLength;
+  itemList.innerHTML = displayLength;
 };
 
 const fetchData = () => {
-    fetch('https://themealdb.com/api/json/v1/1/categories.php')
-        .then((response) => response.json())
-        .then((data) => totalItems(data.categories))
-        .catch((error) => new Error(error));
+  fetch('https://themealdb.com/api/json/v1/1/categories.php')
+    .then((response) => response.json())
+    .then((data) => totalItems(data.categories))
+    .catch((error) => new Error(error));
 };
 fetchData();
 
