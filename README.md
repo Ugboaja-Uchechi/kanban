@@ -2,7 +2,7 @@
 
 # kanban
 
-* This website displays meals gotten from an API [MealsDb](https://themealdb.com/api/json/v1/1/categories.php)
+* This website displays meals gotten from an API [MealsDb](https://themealdb.com/)
 
 # Screenshot
 
