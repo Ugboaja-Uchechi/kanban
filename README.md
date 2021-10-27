@@ -11,6 +11,10 @@
 # Demo Link
 
 [Live Link](https://ugboaja-uchechi.github.io/kanban/dist/)
+
+# Video Documentation
+https://drive.google.com/file/d/14eDpL_kg01yVm2YGZHhYfePjcmZnWmtz/view?usp=sharing
+
 ## Setup
 
 ### Clone this repository
