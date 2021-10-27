@@ -10,7 +10,7 @@
 
 # Demo Link
 
-[Live Link](http://localhost:8080/)
+[Live Link](https://ugboaja-uchechi.github.io/kanban/dist/)
 ## Setup
 
 ### Clone this repository
