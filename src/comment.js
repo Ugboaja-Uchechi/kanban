@@ -16,7 +16,8 @@ const displayPop = async (index) => {
     <p class="description"> ${meals[index - 1].strCategoryDescription} </p>
     <div class="new-comments">
     <h3> Comments <span class="comments-count"></span> </h3>
-    <ul id="${meals[index - 1].idCategory}" class="comment-list"> </ul>
+
+    ul id="${meals[index - 1].idCategory}" class="comment-list"> </ul>
     </div>
 </div>
   <form class="popup-bottom" name="form-dom">
@@ -25,7 +26,6 @@ const displayPop = async (index) => {
   <textarea class="userComment" id="comment-id" name="comment-name" placeholder="Comment here ..." rows="10" cols="50" required></textarea>
   <button type="submit" class="comm-sub">Submit</button>
   </form>`;
-
   const popupWrapper = document.querySelector('.popup-wrapper');
   const close = document.querySelector('.close');
   close.addEventListener('click', () => {
@@ -33,5 +33,4 @@ const displayPop = async (index) => {
   });
   displayComment();
 };
-
 export default displayPop;

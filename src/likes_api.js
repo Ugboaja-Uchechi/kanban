@@ -11,6 +11,7 @@ const likeId = async (id) => {
       'Content-type': 'application/json',
     },
   });
+
   const returnObject = await response.json;
   return returnObject;
 };
