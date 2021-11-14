@@ -7,9 +7,7 @@ const commentAccess = async (id) => {
   const getPath = `?item_id=${id}`;
   const finalUrl = await fetch(`${commentUrl}${getPath}`);
 
-
   const finalResult = await finalUrl.json();
-
 
   finalResult.forEach((result) => {
     const commentCount = document.querySelector('.comments-count');
@@ -42,7 +40,6 @@ const displayComment = () => {
         'Content-type': 'application/json',
       },
     }).then((response) => response.text()).then(async () => {
-
       const commentList = document.querySelector('.comment-list');
       while (commentList.lastChild) {
         commentList.removeChild(commentList.lastChild);
