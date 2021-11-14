@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { getMeals } from './displayImage.js';
 import { displayComment } from './newComment.js';
 
@@ -15,7 +16,8 @@ const displayPop = async (index) => {
     <p class="description"> ${meals[index - 1].strCategoryDescription} </p>
     <div class="new-comments">
     <h3> Comments <span class="comments-count"></span> </h3>
-    <ul data-id="${meals[index - 1].idCategory}" class="comment-list"> </ul>
+
+    ul id="${meals[index - 1].idCategory}" class="comment-list"> </ul>
     </div>
 </div>
   <form class="popup-bottom" name="form-dom">

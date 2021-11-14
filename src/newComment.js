@@ -1,4 +1,4 @@
-const commentId = '45oQ5RMFYWmr97YHBpQf';
+const commentId = 'e1S5t40OG3RLof93jPDq';
 const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 
 const commentUrl = `${baseUrl}${commentId}/comments`;
@@ -6,7 +6,11 @@ const commentUrl = `${baseUrl}${commentId}/comments`;
 const commentAccess = async (id) => {
   const getPath = `?item_id=${id}`;
   const finalUrl = await fetch(`${commentUrl}${getPath}`);
+
+
   const finalResult = await finalUrl.json();
+
+
   finalResult.forEach((result) => {
     const commentCount = document.querySelector('.comments-count');
     const commentList = document.querySelector('.comment-list');
@@ -38,7 +42,13 @@ const displayComment = () => {
         'Content-type': 'application/json',
       },
     }).then((response) => response.text()).then(async () => {
+
+      const commentList = document.querySelector('.comment-list');
+      while (commentList.lastChild) {
+        commentList.removeChild(commentList.lastChild);
+      }
       await commentAccess(name.id);
+
       name.value = '';
       comment.value = '';
     });

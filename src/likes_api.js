@@ -2,16 +2,17 @@ const involvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/c
 const apiId = 'PPe1jteASeyGFemQLBaU/likes';
 
 const likeId = async (id) => {
-  const response = await fetch(`${involvementApi}${apiId}`,
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        item_id: id,
-      }),
-      headers: {
-        'Content-type': 'application/json',
-      },
-    });
+
+  const response = await fetch(`${involvementApi}${apiId}`, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+    }),
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+
   const returnObject = await response.json;
   return returnObject;
 };

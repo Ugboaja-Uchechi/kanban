@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import accessComment from './accessButton.js';
 import { allHearts, likesDisplay } from './likes_api.js';
 
@@ -23,7 +24,7 @@ const loadData = async () => {
         likeVariable = likes.likes;
       }
     });
-    display += `   
+    display += `
       <li id="${element.idCategory}">
       <img src="${element.strCategoryThumb}" alt="Food">
       <div class="name">
@@ -55,4 +56,4 @@ const fetchData = () => {
 };
 fetchData();
 
-export { loadData, getMeals };
+export { loadData, getMeals, totalItems };
